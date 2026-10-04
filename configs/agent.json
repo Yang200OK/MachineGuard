@@ -1,0 +1,14 @@
+{
+  "schema": "machineguard.agent.v1",
+  "answer_model": "qwen3.8-max-0902",
+  "chat_endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "key_env": "DASHSCOPE_API_KEY",
+  "request_seconds": 60,
+  "timeout_seconds": 600,
+  "max_input_tokens": 20000,
+  "max_output_tokens": 1600,
+  "max_model_calls": 6,
+  "max_tool_calls": 8,
+  "max_pending_per_owner": 2,
+  "max_guest_runs": 5
+}

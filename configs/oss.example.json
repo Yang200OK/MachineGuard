@@ -1,0 +1,8 @@
+{
+  "region": "cn-hangzhou",
+  "endpoint": "https://oss-cn-hangzhou.aliyuncs.com",
+  "bucket": "YOUR_BUCKET_NAME",
+  "prefix": "machineguard/",
+  "access_key_id_env": "AccessKey_ID",
+  "access_key_secret_env": "AccessKey_Secret"
+}

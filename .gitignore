@@ -1,0 +1,43 @@
+# Python 缓存与本地环境
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv-api/
+local/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# 原始数据、运行产物与凭据不提交
+data/raw/
+data/processed/
+artifacts/
+outputs/
+.env
+.env.*
+!.env.example
+
+# 编辑器与前端构建缓存
+.idea/
+.vscode/
+node_modules/
+frontend/dist/
+
+# 本机云资源配置只在本地保留，公开仓库提交对应模板。
+/configs/oss.json
+/configs/oss-ram-policy.json
+
+# 本机数据路径与个人开发过程记录不公开提交。
+/configs/data.json
+/AGENTS.md
+/docs/development-history.md
+/docs/implementation-plan.md
+/docs/design/
+/docs/verification/
+/docs/setup/*.md
+!/docs/setup/local-run.md
+!/docs/setup/mcp.md
+!/docs/setup/oss.md
+/docs/images/assistant-evidence-path.png

@@ -1,0 +1,16 @@
+{
+  "schema": "machineguard.qa.v1",
+  "rerank_model": "qwen3.7-text-rerank",
+  "answer_model": "qwen3.8-max-0902",
+  "rerank_endpoint": "https://dashscope.aliyuncs.com/api/v1/services/rerank/text-rerank/text-rerank",
+  "chat_endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "key_env": "DASHSCOPE_API_KEY",
+  "recall_limit": 20,
+  "evidence_limit": 5,
+  "min_rerank_score": 0.5,
+  "request_seconds": 60,
+  "timeout_seconds": 360,
+  "max_input_tokens": 8000,
+  "max_output_tokens": 1600,
+  "prompt_version": "grounded-claims-quotes-v2"
+}

@@ -1,0 +1,2 @@
+# 文本文件统一使用 LF，便于 Windows 开发与后续 Linux 部署。
+* text=auto eol=lf

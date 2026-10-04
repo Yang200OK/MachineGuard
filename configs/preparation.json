@@ -1,0 +1,7 @@
+{
+  "validation_size": 0.2,
+  "random_state": 42,
+  "split_shuffle": true,
+  "window_size": 30,
+  "stride": 1
+}

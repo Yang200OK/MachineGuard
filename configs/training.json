@@ -1,0 +1,15 @@
+{
+  "epochs": 200,
+  "seed": 42,
+  "hidden_size": 64,
+  "num_layers": 2,
+  "dropout": 0.2,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "gradient_clip": 5.0,
+  "scheduler_patience": 5,
+  "scheduler_factor": 0.5,
+  "min_learning_rate": 0.00001,
+  "cpu_threads": 4
+}

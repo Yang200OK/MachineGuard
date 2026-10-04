@@ -1,0 +1,20 @@
+{
+  "Version": "1",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["oss:GetBucketLocation", "oss:GetBucketAcl"],
+      "Resource": ["acs:oss:*:*:YOUR_BUCKET_NAME"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["oss:PutObject", "oss:GetObject", "oss:GetObjectAcl"],
+      "Resource": ["acs:oss:*:*:YOUR_BUCKET_NAME/machineguard/*"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["oss:DeleteObject"],
+      "Resource": ["acs:oss:*:*:YOUR_BUCKET_NAME/machineguard/verification/*"]
+    }
+  ]
+}

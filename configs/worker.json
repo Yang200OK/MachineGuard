@@ -1,0 +1,8 @@
+{
+  "lease_seconds": 30,
+  "heartbeat_seconds": 5,
+  "poll_seconds": 1.0,
+  "max_attempts": 3,
+  "timeout_seconds": 120,
+  "max_pending_per_owner": 10
+}

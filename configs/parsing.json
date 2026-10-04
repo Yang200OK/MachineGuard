@@ -1,0 +1,19 @@
+{
+  "schema": "machineguard.parsing.v1",
+  "parser_version": "1.0.0",
+  "tokenizer": "o200k_base",
+  "chunk_tokens": 600,
+  "overlap_tokens": 80,
+  "max_pdf_pages": 30,
+  "max_visual_pages": 6,
+  "max_text_chars": 300000,
+  "max_chunks": 1500,
+  "timeout_seconds": 600,
+  "vision_model": "qwen3.8-max-0902",
+  "vision_endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "vision_key_env": "DASHSCOPE_API_KEY",
+  "vision_request_seconds": 60,
+  "vision_max_tokens": 6000,
+  "render_dpi": 120,
+  "render_max_side": 1800
+}

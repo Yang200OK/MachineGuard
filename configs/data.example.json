@@ -1,0 +1,5 @@
+{
+  "dataset": "FD001",
+  "source_directory": "data/raw/CMAPSSData",
+  "summary_directory": "data/processed"
+}

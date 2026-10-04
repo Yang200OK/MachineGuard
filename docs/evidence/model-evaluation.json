@@ -1,0 +1,23 @@
+{
+  "schema_version": "machineguard.fd001_evaluation.v1",
+  "model_version": "20260930T120445Z-9dbeea3a",
+  "completed_epochs": 200,
+  "best_epoch": 20,
+  "selection": "只按训练文件内发动机隔离的验证集原始 RMSE 选 best；官方测试标签不参与训练或选模。",
+  "data_nature": "NASA C-MAPSS FD001 模拟数据；原始未裁剪标签，误差单位为运行周期。",
+  "lstm": {
+    "validation": {
+      "samples": 3490,
+      "mae": 18.517636750796463,
+      "mse": 743.165890384248,
+      "rmse": 27.26106913501831
+    },
+    "official_test_terminal": {
+      "samples": 100,
+      "mae": 15.464736042022706,
+      "mse": 458.0073567767111,
+      "rmse": 21.40110643814266
+    }
+  },
+  "scope": "单次 seed=42 的实际 LSTM 评估；训练完成 200 轮，按验证集 RMSE 选择 best。"
+}

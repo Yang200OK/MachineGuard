@@ -1,0 +1,8 @@
+<script setup lang="ts">
+import { useAuthStore } from '../stores/auth'
+import { roleLabel, timestamp } from '../format'
+import McpAccess from '../components/McpAccess.vue'
+const auth = useAuthStore()
+const labels: Record<string, string> = { 'devices:read': '查询授权设备与观测', 'predictions:create': '创建与查询本人预测', 'users:manage': '账号管理权限', 'analysis:create': '分析权限', 'reports:review': '报告审核权限', 'knowledge:manage': '知识管理权限', 'system:read': '系统状态权限' }
+</script>
+<template><div class="page-heading"><div><div class="eyebrow">IDENTITY & ACCESS</div><h1>当前账号</h1><p>设备访问范围和历史记录由服务器身份权限决定。</p></div></div><section v-if="auth.user" class="panel account-panel"><div class="account-heading"><span class="large-avatar">{{ auth.user.display_name.slice(0, 1) }}</span><div><h2>{{ auth.user.display_name }}</h2><p>{{ auth.user.roles.map(role => roleLabel[role]).join(' / ') }}</p></div><el-tag :type="auth.user.is_guest ? 'info' : 'success'">{{ auth.user.is_guest ? '访客会话' : '正式账号' }}</el-tag></div><dl class="detail-grid"><dt>账号名称</dt><dd class="mono">{{ auth.user.username }}</dd><dt>设备范围</dt><dd>{{ auth.user.is_guest ? '仅 6 台示例设备' : '当前授权的全部 FD001 测试设备' }}</dd><dt>历史归属</dt><dd>仅查询本人的预测；切换身份后不可读取他人历史。</dd><dt>会话到期</dt><dd>{{ timestamp(auth.expiresAt) }}</dd><dt>账号创建</dt><dd>{{ timestamp(auth.user.created_at) }}</dd></dl><h3>角色权限</h3><div class="permission-list"><span v-for="permission in auth.user.permissions" :key="permission">{{ labels[permission] }}<small>{{ permission }}</small></span></div><p class="method-caption">权限名称表示角色授权；退出会撤销本次会话，刷新会重新向服务器验证身份。访客重新进入会创建另一个身份。</p></section><McpAccess v-if="auth.user && !auth.user.is_guest" /></template>

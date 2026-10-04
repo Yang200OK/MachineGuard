@@ -1,0 +1,23 @@
+[
+  {
+    "id": "M01",
+    "question": "资料快照会在一个会话里保持固定吗？",
+    "expected": "answered"
+  },
+  {
+    "id": "M02",
+    "question": "它会在新资料发布后自动更新吗？",
+    "expected": "answered"
+  },
+  {
+    "id": "M03",
+    "question": "这台设备当前还剩多少运行周期？",
+    "expected": "refused"
+  },
+  {
+    "id": "M04",
+    "question": "资料快照在新资料发布后会自动更新吗？",
+    "expected": "answered",
+    "note": "明确对象的新问题；保留 M02 原错误，不自动重试或替代回答。"
+  }
+]

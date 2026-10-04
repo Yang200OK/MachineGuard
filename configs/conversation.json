@@ -1,0 +1,14 @@
+{
+  "schema": "machineguard.conversation.v1",
+  "answer_model": "qwen3.7-plus",
+  "chat_endpoint": "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "key_env": "DASHSCOPE_API_KEY",
+  "request_seconds": 60,
+  "timeout_seconds": 420,
+  "max_input_tokens": 8000,
+  "max_output_tokens": 600,
+  "history_turns": 3,
+  "max_context_tokens": 2000,
+  "max_turns": 20,
+  "prompt_version": "restricted-reference-terms-v2"
+}

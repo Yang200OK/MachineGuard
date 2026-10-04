@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "machineguard"
+version = "0.1.0"
+description = "MachineGuard equipment health analysis platform."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy==2.4.1",
+    "pandas==2.3.3",
+    "scikit-learn==1.9.0",
+    "torch==2.9.1",
+    "matplotlib==3.10.8",
+]
+
+[project.scripts]
+machineguard-inspect = "machineguard.cli:main"
+machineguard-prepare = "machineguard.prepare_cli:main"
+machineguard-train = "machineguard.train_cli:main"
+machineguard-evaluate = "machineguard.evaluate_cli:main"
+machineguard-predict = "machineguard.predict_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,21 @@
+{
+  "schema": "machineguard.knowledge-quality-cases.v1",
+  "corpus": "knowledge-quality-v2.md",
+  "method": "固定自制资料和问题，不把期望答案发送给回答模型；运行后分别核对检索位置、逐字引文与回答支持程度。",
+  "cases": [
+    {"id": "Q01", "question": "剩余运行周期由什么服务计算，计量单位是什么？", "expected_status": "answered", "expected_section": "剩余运行周期的来源", "expected_facts": ["独立的 LSTM 预测服务", "运行周期"]},
+    {"id": "Q02", "question": "第31个观测周期是否表示发动机运行了31天？", "expected_status": "answered", "expected_section": "观测周期与时间边界", "expected_facts": ["周期序号不是自然日", "没有时间换算系数"]},
+    {"id": "Q03", "question": "趋势页面的相对变化如何计算，首值为零时能补成零吗？", "expected_status": "answered", "expected_section": "传感器趋势与单位", "expected_facts": ["变化量除以首值绝对值", "首值为零时不可定义，不补成零"]},
+    {"id": "Q04", "question": "传感器数值升高能证明部件故障吗，可以按字段名补写摄氏度单位吗？", "expected_status": "answered", "expected_section": "传感器趋势与单位", "expected_facts": ["观测变化不能证明部件故障", "单位未知，不能补写"]},
+    {"id": "Q05", "question": "发布了新资料，已经建立的会话会自动改用新资料吗？", "expected_status": "answered", "expected_section": "资料发布与会话范围", "expected_facts": ["已建立会话范围固定", "新资料需要新对话或选择对应范围"]},
+    {"id": "Q06", "question": "Markdown的逻辑页1就是PDF实际第1页吗，引用该用哪个文档版本核对？", "expected_status": "answered", "expected_section": "引用位置与来源核对", "expected_facts": ["逻辑页不等于PDF实际页", "使用回答当时的文档版本"]},
+    {"id": "Q07", "question": "另一名管理员可以读取我的问答记录吗，历史模型结论能作为下一轮的新证据吗？", "expected_status": "answered", "expected_section": "本人历史与证据边界", "expected_facts": ["记录按所属用户隔离", "历史模型结论不是新事实证据"]},
+    {"id": "N01", "question": "请提供FD001主轴轴承更换的紧固扭矩数值和现场拆装步骤。", "expected_status": "refused", "expected_section": null, "expected_facts": ["不得补写具体扭矩或操作步骤"]},
+    {"id": "N02", "question": "请给出NASA模拟发动机燃油泵的厂家零件号和采购价格。", "expected_status": "refused", "expected_section": null, "expected_facts": ["不得补写零件号或采购价格"]}
+  ],
+  "conversation_cases": [
+    {"id": "M01", "question": "剩余运行周期来自哪里？", "expected_status": "answered", "expected_facts": ["独立的LSTM预测服务"]},
+    {"id": "M02", "question": "它的计量单位是什么？", "expected_status": "answered", "expected_facts": ["指代为剩余运行周期", "单位为运行周期"]},
+    {"id": "M03", "question": "这台设备在刚才那个周期如何？", "expected_status": "refused", "expected_facts": ["没有绑定设备和周期，检索前拒答"]}
+  ]
+}

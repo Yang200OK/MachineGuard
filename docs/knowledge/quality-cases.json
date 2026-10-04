@@ -1,0 +1,153 @@
+[
+  {
+    "id": "K01",
+    "question": "相同的数字发动机编号一定是同一台设备吗？",
+    "expected_documents": [
+      "01-data-and-device.md"
+    ],
+    "review_points": [
+      "数据集版本",
+      "训练",
+      "测试"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K02",
+    "question": "LSTM 预测输入需要多少个连续周期？不足时如何处理？",
+    "expected_documents": [
+      "02-cycle-and-input.md"
+    ],
+    "review_points": [
+      "30",
+      "不补零"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K03",
+    "question": "业务剩余周期为 30 和 80 时分别是什么风险等级？这些等级是故障概率吗？",
+    "expected_documents": [
+      "03-rul-and-risk.md"
+    ],
+    "review_points": [
+      "critical",
+      "warning",
+      "不是"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K04",
+    "question": "传感器趋势相对变化怎么计算？首值为零时能否补成零？",
+    "expected_documents": [
+      "04-sensor-trends.md"
+    ],
+    "review_points": [
+      "绝对值",
+      "不可定义"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K05",
+    "question": "保存最佳权重是不是意味着提前停止训练？正式训练多少轮？",
+    "expected_documents": [
+      "05-lstm-and-release.md"
+    ],
+    "review_points": [
+      "200",
+      "不"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K06",
+    "question": "文档上传成功后是不是已经可以用于资料问答？还要哪些步骤？",
+    "expected_documents": [
+      "06-document-publication.md"
+    ],
+    "review_points": [
+      "解析",
+      "审核",
+      "发布"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K07",
+    "question": "每个连续资料会话最多多少轮？历史模型结论可以作为新证据吗？",
+    "expected_documents": [
+      "07-conversation-scope.md"
+    ],
+    "review_points": [
+      "20",
+      "不能"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K08",
+    "question": "删除会话后从任务入口还能读取问答吗？任务记录删除会重新执行吗？",
+    "expected_documents": [
+      "08-citations-and-records.md"
+    ],
+    "review_points": [
+      "阻止",
+      "幂等"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K09",
+    "question": "观测周期能不能换算成天？预测风险等级能不能当成故障概率？",
+    "expected_documents": [
+      "02-cycle-and-input.md",
+      "03-rul-and-risk.md"
+    ],
+    "review_points": [
+      "换算",
+      "概率"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K10",
+    "question": "发布新文档版本后，旧会话和旧回答引用会自动更新吗？",
+    "expected_documents": [
+      "07-conversation-scope.md",
+      "08-citations-and-records.md"
+    ],
+    "review_points": [
+      "固定",
+      "版本"
+    ],
+    "expect_refusal": false
+  },
+  {
+    "id": "K11",
+    "question": "请给出这台发动机主轴承更换的扭矩值和具体拆装步骤。",
+    "expected_documents": [],
+    "review_points": [],
+    "expect_refusal": true
+  },
+  {
+    "id": "K12",
+    "question": "请告诉我现场设备传感器 2 的厂家报警阈值和部件故障原因。",
+    "expected_documents": [],
+    "review_points": [],
+    "expect_refusal": true
+  },
+  {
+    "id": "K03a",
+    "question": "预测风险等级是否是经过概率校准的故障概率？",
+    "expected_documents": [
+      "03-rul-and-risk.md"
+    ],
+    "review_points": [
+      "阈值分组",
+      "不是概率"
+    ],
+    "expect_refusal": false
+  }
+]

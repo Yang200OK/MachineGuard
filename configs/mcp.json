@@ -1,0 +1,9 @@
+{
+  "resource_url": "http://127.0.0.1:8000/mcp/",
+  "allowed_hosts": ["127.0.0.1:*", "localhost:*"],
+  "allowed_origins": ["http://127.0.0.1:5173", "http://localhost:5173"],
+  "max_calls_per_minute": 30,
+  "max_knowledge_calls_per_minute": 5,
+  "max_body_bytes": 32768,
+  "max_active_credentials": 10
+}
